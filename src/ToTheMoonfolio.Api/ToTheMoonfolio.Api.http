@@ -1,6 +1,0 @@
-@ToTheMoonfolio.Api_HostAddress = http://localhost:5168
-
-GET {{ToTheMoonfolio.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

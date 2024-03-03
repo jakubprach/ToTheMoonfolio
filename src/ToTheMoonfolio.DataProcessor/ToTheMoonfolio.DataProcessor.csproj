@@ -8,6 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MassTransit" Version="8.1.3" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.3" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0"/>
+        <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ToTheMoonfolio.DataBroker.Core\ToTheMoonfolio.DataBroker.Core.csproj" />
+      <ProjectReference Include="..\ToTheMoonfolio.DataBroker.Publisher\ToTheMoonfolio.DataBroker.Publisher.csproj" />
     </ItemGroup>
 </Project>

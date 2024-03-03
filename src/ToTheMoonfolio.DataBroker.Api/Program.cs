@@ -1,5 +1,5 @@
-using ToTheMoonfolio.Api;
-using ToTheMoonfolio.ServiceBus;
+using ToTheMoonfolio.DataBroker.Infrastructure;
+using ToTheMoonfolio.DataBroker.Publisher;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,12 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-var eventsToConsumers = new List<Type>
-{
-    typeof(MqHandler)
-};
-
-builder.Services.AddServiceBusWithConsumers(eventsToConsumers);
+builder.Services
+    .AddInfrastructure(builder.Configuration)
+    .AddPublisher();
 
 var app = builder.Build();
 
