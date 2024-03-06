@@ -1,5 +1,5 @@
 ﻿using MassTransit;
-using ToTheMoonfolio.DataProcessor;
+using ToTheMoonfolio.ServiceBus.Messages;
 
 namespace ToTheMoonfolio.Api;
 

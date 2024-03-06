@@ -8,13 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MassTransit.Abstractions" Version="8.1.3" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ToTheMoonfolio.DataBroker.Publisher\ToTheMoonfolio.DataBroker.Publisher.csproj" />
-      <ProjectReference Include="..\ToTheMoonfolio.DataProcessor\ToTheMoonfolio.DataProcessor.csproj" />
+      <ProjectReference Include="..\ToTheMoonfolio.ServiceBus\ToTheMoonfolio.ServiceBus.csproj" />
     </ItemGroup>
-
+    
 </Project>

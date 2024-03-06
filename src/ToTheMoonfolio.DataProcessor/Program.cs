@@ -1,18 +1,38 @@
+using System.Threading;
 using ToTheMoonfolio.DataBroker.Core.Abstractions;
 using ToTheMoonfolio.DataBroker.Publisher;
-using ToTheMoonfolio.DataProcessor;
 using ToTheMoonfolio.ServiceBus;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using ToTheMoonfolio.DataProcessor;
 
-var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
-builder.Services.AddTransient<IEventBus, EventBus>();
-
-var eventsToConsume = new List<Type>
+class Program
 {
-    typeof(GeneralStockInformationHandler)
-};
+    static void Main(string[] args)
+    {
+        var builder = Host.CreateDefaultBuilder(args)
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddTransient<IEventBus, EventBus>();
 
-builder.Services.AddServiceBusWithConsumers(eventsToConsume);
+                var eventsToConsume = new List<Type>
+                {
+                    typeof(GeneralStockInformationHandler)
+                };
 
-var host = builder.Build();
-host.Run();
+                services.AddServiceBusWithConsumers(eventsToConsume);
+            });
+
+        var host = builder.Build();
+
+        // Run the host in a separate thread
+        new Thread(() => host.Run()).Start();
+
+        // Keep the main thread running indefinitely
+        while (true)
+        {
+            Thread.Sleep(Timeout.Infinite);
+        }
+    }
+}

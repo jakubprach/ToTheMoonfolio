@@ -13,7 +13,7 @@ public static class Setup
 
             busConfigurator.UsingRabbitMq((context, configurator) =>
             {
-                configurator.Host("localhost", "/", h =>
+                configurator.Host("rabbitmq", "/", h =>
                 {
                     h.Username("guest");
                     h.Password("guest");
@@ -37,7 +37,7 @@ public static class Setup
 
             busConfigurator.UsingRabbitMq((context, configurator) =>
             {
-                configurator.Host("localhost", "/", h =>
+                configurator.Host("rabbitmq", "/", h =>
                 {
                     h.Username("guest");
                     h.Password("guest");

@@ -13,10 +13,28 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-  tothemoonfolio.api:
+  to-the-moonfolio.api:
     build:
-      context: ../src
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: ./ToTheMoonFolio.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - postgres
+      - rabbitmq
+  to-the-moonfolio-data-broker.api:
+    build:
+      context: .
+      dockerfile: ./ToTheMoonfolio.DataBroker.Api/Dockerfile
+    ports:
+      - "5001:8080"
+    depends_on:
+      - postgres
+      - rabbitmq
+  to-the-moonfolio-data-processor:
+    build:
+      context: .
+      dockerfile: ./ToTheMoonfolio.DataProcessor/Dockerfile
     depends_on:
       - postgres
       - rabbitmq

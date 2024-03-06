@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using ToTheMoonfolio.DataBroker.Core.Abstractions;
-using ToTheMoonfolio.DataBroker.Core.Messages;
+using ToTheMoonfolio.ServiceBus.Messages;
 
 namespace ToTheMoonfolio.DataProcessor;
 
@@ -24,5 +24,3 @@ public class GeneralStockInformationHandler : IConsumer<StockInformationReceived
         return Task.CompletedTask;
     }
 }
-
-public sealed record StockInformationProcessed(string Symbol, decimal Price);

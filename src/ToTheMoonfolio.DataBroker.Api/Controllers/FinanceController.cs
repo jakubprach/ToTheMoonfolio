@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ToTheMoonfolio.DataBroker.Core.Abstractions;
-using ToTheMoonfolio.DataBroker.Core.Messages;
+using ToTheMoonfolio.ServiceBus.Messages;
 
 namespace ToTheMoonfolio.DataBroker.Api.Controllers;
 
