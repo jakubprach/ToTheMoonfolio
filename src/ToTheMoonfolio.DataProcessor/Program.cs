@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using ToTheMoonfolio.DataProcessor;
+using ToTheMoonfolio.DataProcessor.Handlers;
 
 class Program
 {

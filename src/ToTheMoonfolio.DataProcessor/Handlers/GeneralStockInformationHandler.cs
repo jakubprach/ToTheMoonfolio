@@ -2,7 +2,7 @@
 using ToTheMoonfolio.DataBroker.Core.Abstractions;
 using ToTheMoonfolio.ServiceBus.Messages;
 
-namespace ToTheMoonfolio.DataProcessor;
+namespace ToTheMoonfolio.DataProcessor.Handlers;
 
 public class GeneralStockInformationHandler : IConsumer<StockInformationReceived>
 {
