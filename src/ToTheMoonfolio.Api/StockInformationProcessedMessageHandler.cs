@@ -3,7 +3,7 @@ using ToTheMoonfolio.ServiceBus.Messages;
 
 namespace ToTheMoonfolio.Api;
 
-public class MqHandler : IConsumer<StockInformationProcessed>
+public class StockInformationProcessedMessageHandler : IConsumer<StockInformationProcessed>
 {
     public Task Consume(ConsumeContext<StockInformationProcessed> context)
     {

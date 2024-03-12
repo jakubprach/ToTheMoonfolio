@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 var eventsToConsumers = new List<Type>
 {
-    typeof(MqHandler)
+    typeof(StockInformationProcessedMessageHandler)
 };
 
 builder.Services.AddServiceBusWithConsumers(eventsToConsumers);
