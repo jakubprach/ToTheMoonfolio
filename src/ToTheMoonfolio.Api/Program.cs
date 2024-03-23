@@ -1,4 +1,5 @@
 using ToTheMoonfolio.Api;
+using ToTheMoonfolio.Persistence;
 using ToTheMoonfolio.ServiceBus;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddPersistence(builder.Configuration);
+
 var eventsToConsumers = new List<Type>
 {
     typeof(StockInformationProcessedMessageHandler)

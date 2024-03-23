@@ -1,6 +1,9 @@
-﻿namespace ToTheMoonfolio.Persistence;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-public class ApplicationDbContext
+namespace ToTheMoonfolio.Persistence;
+
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 {
-    
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 }
