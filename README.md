@@ -4,7 +4,7 @@ ToTheMoonfolio is a project aimed at tracking gains and losses for financial ins
 
 ##  100 Commits Challenge
 
-This project is actively participating in the 100 Commits Challenge!
+This project is actively participating in the 100 Commits Challenge
 https://100commitow.pl/repozytoria
 
 ## Future Features
